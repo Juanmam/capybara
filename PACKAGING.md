@@ -51,17 +51,16 @@ Update the version in:
 
 Follow semantic versioning (MAJOR.MINOR.PATCH).
 
-## Read the Docs Setup
+## GitHub Pages Setup
 
-1. Create an account at https://readthedocs.org
-2. Import your repository
-3. Configure the project:
-   - Python version: 3.11
-   - Configuration file: `.readthedocs.yml`
-   - Install requirements from: `docs/requirements.txt`
-4. Build the documentation
+1. Go to your repository Settings → Pages
+2. Set Source to "GitHub Actions"
+3. The documentation will be automatically built and deployed on each push to the main branch
 
-The documentation will be automatically built on each commit to the main branch.
+The GitHub Actions workflow (`.github/workflows/docs.yml`) handles:
+- Building Sphinx documentation
+- Deploying to the `gh-pages` branch
+- Automatic updates on each commit
 
 ## Local Documentation Build
 

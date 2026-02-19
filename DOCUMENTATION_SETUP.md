@@ -1,6 +1,6 @@
 # Documentation and Packaging Setup Summary
 
-This document summarizes all the files created for PyPI packaging and Read the Docs integration.
+This document summarizes all the files created for PyPI packaging and GitHub Pages integration.
 
 ## Files Created
 
@@ -55,16 +55,16 @@ This document summarizes all the files created for PyPI packaging and Read the D
 
 12. **`docs/README.md`** - Documentation build instructions
 
-### Read the Docs Configuration
+### GitHub Pages Configuration
 
-1. **`.readthedocs.yml`** - Read the Docs configuration
-   - Build environment (Ubuntu 22.04, Python 3.11)
-   - Sphinx configuration path
-   - Installation requirements
+1. **`.github/workflows/docs.yml`** - GitHub Actions workflow for documentation
+   - Builds Sphinx documentation
+   - Deploys to GitHub Pages
+   - Runs on push to main branch
 
 2. **`docs/requirements.txt`** - Documentation dependencies
    - Sphinx and extensions
-   - Read the Docs theme
+   - Read the Docs theme (sphinx-rtd-theme, works great on GitHub Pages)
 
 ## Quick Start
 
@@ -105,18 +105,14 @@ twine upload --repository testpypi dist/*
 twine upload dist/*
 ```
 
-## Read the Docs Setup
+## GitHub Pages Setup
 
-1. Go to https://readthedocs.org and sign up/login
-2. Click "Import a Project"
-3. Connect your GitHub/GitLab repository
-4. Configure:
-   - Project name: `capybara`
-   - Repository URL: Your repository URL
-   - Python configuration file: `.readthedocs.yml`
-5. Click "Build" to trigger the first build
+1. Go to your repository Settings → Pages
+2. Set Source to "GitHub Actions"
+3. Push a commit to the main branch to trigger the workflow
+4. The documentation will be automatically built and deployed
 
-The documentation will automatically rebuild on each commit to your main branch.
+The documentation will be available at: `https://<username>.github.io/<repository-name>/`
 
 ## Next Steps
 
@@ -128,7 +124,7 @@ The documentation will automatically rebuild on each commit to your main branch.
 
 ## Notes
 
-- The documentation uses the Read the Docs theme by default
+- The documentation uses the Read the Docs theme (sphinx-rtd-theme) which works great on GitHub Pages
 - API documentation is automatically generated from docstrings
 - All modules are documented using Sphinx autodoc
 - The documentation structure follows best practices for Python libraries

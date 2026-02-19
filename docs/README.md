@@ -42,6 +42,11 @@ sphinx-build -b html . _build/html
   - `_static/` - Static files (CSS, images)
   - `_templates/` - Custom templates
 
-## Read the Docs
+## GitHub Pages
 
-The documentation is configured to build automatically on Read the Docs using the `.readthedocs.yml` configuration file in the project root.
+The documentation is automatically built and deployed to GitHub Pages using GitHub Actions. The workflow is configured in `.github/workflows/docs.yml`.
+
+To enable GitHub Pages:
+1. Go to your repository Settings → Pages
+2. Set Source to "GitHub Actions"
+3. The documentation will be automatically deployed on each push to the main branch

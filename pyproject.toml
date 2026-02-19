@@ -53,7 +53,7 @@ docs = [
 
 [project.urls]
 Homepage = "https://github.com/juanmmejia/capybara"
-Documentation = "https://capybara.readthedocs.io"
+Documentation = "https://juanmmejia.github.io/capybara"
 Repository = "https://github.com/juanmmejia/capybara"
 Issues = "https://github.com/juanmmejia/capybara/issues"
 
